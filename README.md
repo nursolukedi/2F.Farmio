@@ -1,7 +1,7 @@
 # Farmio319
 Farm game implementation for CS319
 
-This game is a basic implementation of well known game FarmVille game. There is a farmer and he is able to plant different vegetables, fruits and harvest to sell them. All fruits and vegetables have different growing times, different seed costs and sale prices. Farmer has tools to take care of each plant as different tools for planting and harvesting. 
+This game is a basic 2D implementation of well known game FarmVille game. There is a farmer and he is able to plant different vegetables, fruits and harvest to sell them. All fruits and vegetables have different growing times, different seed costs and sale prices. Farmer has tools to take care of each plant as different tools for planting and harvesting. 
 
 Group Members : 
 Demir Topaktaş 
