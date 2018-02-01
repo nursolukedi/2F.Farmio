@@ -3,7 +3,7 @@ CS 319 – Object Oriented Software Engineering
 
 Term Project
 
-Instructor: Bora Güngören
+Instructor: Uğur Doğrusöz
 
 Section 2 – Team F: (2F)
 
