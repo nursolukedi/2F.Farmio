@@ -11,11 +11,8 @@ This game is a basic 2D implementation of well known game FarmVille game. There 
 
 Group Members : 
 Demir Topaktaş 
-
 Fuad Ahmad 
-
 Nursena Kal 
-
 Eray Şahin
 
 Group Meeting Hours : 
