@@ -24,3 +24,6 @@ Tuesday / Thursday - 17.45 - 19.30
 Original game : https://www.zynga.com/games/farmville
 
 Meeting logs : https://docs.google.com/document/d/1VbwPisUn_UkfPCoFvkpm6Gfb3ZaXw6i3-dqAw5v_mJQ/edit?usp=sharing
+
+ANALYSIS REPORT: :white_check_mark:
+DEISGN REPORT: :white_check_mark:
