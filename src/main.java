@@ -21,9 +21,11 @@ public class main {
         
         DrawPanel panel = new DrawPanel();
         
-        frame.setSize(new Dimension(800, 800));
+        frame.setSize(new Dimension(800, 600));
         
         // frame.setLocation(new Point(200, 200));
+        
+        frame.setLocationRelativeTo(null); // in the center
         
         frame.setResizable(false);
         
