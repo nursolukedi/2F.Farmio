@@ -1,13 +1,15 @@
+package src.source.model;
 import java.util.ArrayList;
+
 public class Inventory {
 	
 	private ArrayList <Item> inventory;
-	int strawBerryCnt=0;
-	int cornCnt=0;
-	int sunFlowerCnt=0;
-	int strawberrySeedCnt=0;
-	int cornSeedCnt=0;
-	int sunFlowerSeedCnt=0;
+	private int strawBerryCnt=0;
+	private int cornCnt=0;
+	private int sunFlowerCnt=0;
+	private int strawberrySeedCnt=0;
+	private int cornSeedCnt=0;
+	private int sunFlowerSeedCnt=0;
 	
 	
 	public Inventory(){

@@ -1,7 +1,8 @@
+package src.source.model;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 public class Sunflower extends Food{
-	private Image image= new ImageIcon("src/image/sunflower.png").getImage();
+	private Image image= new ImageIcon("src/images/sunflower.png").getImage();
 	
 	private final int healthPoints=25;
 	private final int storePrice=5;

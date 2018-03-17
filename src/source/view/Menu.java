@@ -1,4 +1,4 @@
-package src;
+package src.source.view;
 
 import javafx.scene.chart.Axis;
 

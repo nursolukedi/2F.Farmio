@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src;
+package src.OnDevelopmentStage;
+
+import src.source.view.DrawPanel;
 
 import java.awt.Dimension;
 import java.awt.Point;
@@ -29,7 +31,7 @@ public class main {
         
         frame.setResizable(false);
         
-        frame.setContentPane(panel);
+     //   frame.setContentPane(panel);
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         

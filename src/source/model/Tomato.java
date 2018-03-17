@@ -1,7 +1,8 @@
+package src.source.model;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 public class Tomato extends Food{
-	private Image image= new ImageIcon("src/image/tomato.png").getImage();
+	private Image image= new ImageIcon("src/images/tomato.png").getImage();
 	
 	private final int healthPoints=25;
 	private final int storePrice=5;

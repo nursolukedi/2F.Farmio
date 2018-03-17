@@ -1,3 +1,4 @@
+package src.source.model;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 public class Potato extends Food{
