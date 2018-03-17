@@ -12,9 +12,10 @@ public class GUIMain extends JFrame
 
      private Menu menu;
      private Credits credits;
+     private GamePanel gameView;
 
 
-     public GUIMain()
+     private GUIMain()
      {
 
          setTitle("Farmio");
@@ -35,10 +36,15 @@ public class GUIMain extends JFrame
 
          credits = new Credits(contentPane,cards);
 
+         gameView = new GamePanel();
+
+
 
          contentPane.add(menu, "main");
 
          contentPane.add(credits, "credits");
+
+         contentPane.add(gameView, "gameView");
 
 
          cards.show(contentPane, "main");

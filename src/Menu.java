@@ -25,7 +25,7 @@ public class Menu extends JPanel
        {
             public void actionPerformed(ActionEvent e)
             {
-              //  cards.show(contentPanel,"credits");
+               cards.show(contentPanel,"gameView");
             }
        } );
 

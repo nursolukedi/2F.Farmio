@@ -1,3 +1,4 @@
+package doc.fuad;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 public class Corn extends GameObject implements Food{

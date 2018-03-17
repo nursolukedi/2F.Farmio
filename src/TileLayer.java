@@ -1,7 +1,6 @@
-package javaapplication1;
+package src;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -18,8 +17,8 @@ public class TileLayer {
     
     
     private int[][] map;
-    
-    
+
+
     
     private BufferedImage tileSheet;
     
@@ -67,8 +66,8 @@ public class TileLayer {
         
         
         
-        int ROW_NUM = 600;
-        int COL_NUM = 800;
+        int ROW_NUM = 6;
+        int COL_NUM = 8;
         
         
         
@@ -162,19 +161,23 @@ public class TileLayer {
     } // loadTileSheet
     
     public void drawLayer(Graphics g) {
-        
-        for (int row = 0; row < 600; row++) {
+
+
+
+      //  g.drawImage(img,0,0,640,480,null );
+
+        for (int row = 0; row < 300; row++) {
             
-            for (int col = 0; col < 800; col++) {
+            for (int col = 0; col < 400; col++) {
                 
                 int rc = map[row][col];
                 
                 if (rc == 0) g.setColor(Color.GREEN);
-                // else if (rc == 1) g.setColor(Color.WHITE);
+                else if (rc == 1) g.setColor(Color.BLUE);
                 
-                g.drawImage(tileSheet, 0 + col * 50, 0 + row * 50, null);
+               // g.drawImage(tileSheet, 0 + col * 50, 0 + row * 50, null);
                 
-                // g.fillRect(0 + col * 50, 0 + row * 50, 60, 60);
+                g.fillRect(0 + col * 50, 0 + row * 50, 20, 20);
                 
             }
         }
