@@ -19,7 +19,7 @@ public class DrawPanel extends JPanel {
     
     public DrawPanel() {
         
-        layer = TileLayer.readTextFile("map2.txt");
+        layer = TileLayer.readTextFile("map.txt");
         
     }
     
