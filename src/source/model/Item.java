@@ -1,6 +1,4 @@
 
-package src;
-
 public abstract class Item extends GameObject{
 	
 	public Item(int x, int y){
