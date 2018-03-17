@@ -1,4 +1,4 @@
-package javaapplication1;
+package src;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -51,9 +51,9 @@ public class TileLayer {
         }
         
         
-        seed = loadTileSheet("seed80x80.png");
-        redSeed = loadTileSheet("redSeed80x80.png");
-        treeTop = loadTileSheet("treetop80x80.png");
+        seed = loadTileSheet("src/redSeed80x80.png");
+        redSeed = loadTileSheet("src/redSeed80x80.png");
+        treeTop = loadTileSheet("src/treetop80x80.png");
         
     } // constructor
     
@@ -89,7 +89,7 @@ public class TileLayer {
             
             
             int i = 0; // index to access rows
-            int j = 0; // index to access columns
+            int j; // index to access columns
             
             
             
@@ -181,9 +181,9 @@ public class TileLayer {
         
         
         
-        layer.seed = layer.loadTileSheet("seed80x80.png");
-        layer.redSeed = layer.loadTileSheet("redSeed80x80.png");
-        layer.treeTop = layer.loadTileSheet("treetop80x80.png");
+        layer.seed = layer.loadTileSheet("src/seed80x80.png");
+        layer.redSeed = layer.loadTileSheet("src/redSeed80x80.png");
+        layer.treeTop = layer.loadTileSheet("src/treetop80x80.png");
         
         
         
@@ -221,6 +221,11 @@ public class TileLayer {
     
     public void drawLayer(Graphics g) {
         
+
+        BufferedImage img2 = loadTileSheet("src/758e05cf2b472e1ba65c68b9c350a1ed.jpg");
+
+        g.drawImage(img2,0,0,640,480,null);
+
         for (int row = 0; row < ROW_NUMBER; row++) {
             
             
@@ -235,7 +240,7 @@ public class TileLayer {
                 if (rc == 0) 
                 
                 {
-                    g.drawImage(treeTop, col * 80, row * 80, null); 
+                    g.drawImage(treeTop, col * 80, row * 80, null);
                 }
                 
                 
@@ -243,7 +248,7 @@ public class TileLayer {
                 else if (rc == 1)
                     
                 {
-                    g.drawImage(seed, col * 80, row * 80, null); 
+                    g.drawImage(seed, col * 80, row * 80, null);
                 }
                 
                 
@@ -251,7 +256,7 @@ public class TileLayer {
                 else if (rc == 2)
                     
                 {
-                    g.drawImage(redSeed, col * 80, row * 80, null); 
+                    g.drawImage(redSeed, col * 80, row * 80, null);
                 }
                 
                 

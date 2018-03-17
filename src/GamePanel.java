@@ -1,25 +1,30 @@
 package src;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class GamePanel extends JPanel
 {
+
     private DrawPanel mapPanel;
 
     private InventoryPanel inventoryPanel;
 
 
-    private Image img = Toolkit.getDefaultToolkit().getImage("/home/demode29/IdeaProjects/2F.Farmio/src/758e05cf2b472e1ba65c68b9c350a1ed.jpg");
-
     public GamePanel()
     {
+
+        setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
 
         mapPanel = new DrawPanel();
 
         inventoryPanel = new InventoryPanel();
 
-
+        inventoryPanel.setPreferredSize( new Dimension(640,-180));
 
         add(mapPanel);
 
@@ -27,12 +32,7 @@ public class GamePanel extends JPanel
 
     }
 
-    @Override
-    public void paintComponent(Graphics g)
-    {
-        super.paintComponent(g);
-        g.drawImage(img,0,0,640,480,this );
 
-    }
+
 
 }

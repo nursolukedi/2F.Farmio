@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+package src;
 
 import java.awt.Graphics;
 import javax.swing.JPanel;
@@ -19,7 +19,7 @@ public class DrawPanel extends JPanel {
     
     public DrawPanel() {
         
-        layer = TileLayer.readTextFile("map.txt");
+        layer = TileLayer.readTextFile("src/map.txt");
         
     }
     
