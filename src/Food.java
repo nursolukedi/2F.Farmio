@@ -1,4 +1,4 @@
-
+package src;
 public abstract class Food extends Item{
 	
 	public Food(int x, int y){
