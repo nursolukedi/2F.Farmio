@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class Menu extends JPanel
 {
 
-    private Image img = Toolkit.getDefaultToolkit().getImage("/home/demode29/IdeaProjects/2F.Farmio/src/mainmenubackground.png");
+    private Image img = Toolkit.getDefaultToolkit().getImage("src/images/mainmenubackground.png");
 
     public Menu( JPanel contentPanel, CardLayout cards )
     {

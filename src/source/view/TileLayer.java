@@ -51,9 +51,9 @@ public class TileLayer {
         }
         
         
-        seed = loadTileSheet("src/redSeed80x80.png");
-        redSeed = loadTileSheet("src/redSeed80x80.png");
-        treeTop = loadTileSheet("src/treetop80x80.png");
+        seed = loadTileSheet("src/images/redSeed80x80.png");
+        redSeed = loadTileSheet("src/images/redSeed80x80.png");
+        treeTop = loadTileSheet("src/images/treetop80x80.png");
         
     } // constructor
     
@@ -181,9 +181,9 @@ public class TileLayer {
         
         
         
-        layer.seed = layer.loadTileSheet("src/seed80x80.png");
-        layer.redSeed = layer.loadTileSheet("src/redSeed80x80.png");
-        layer.treeTop = layer.loadTileSheet("src/treetop80x80.png");
+        layer.seed = layer.loadTileSheet("src/images/seed80x80.png");
+        layer.redSeed = layer.loadTileSheet("src/images/redSeed80x80.png");
+        layer.treeTop = layer.loadTileSheet("src/images/treetop80x80.png");
         
         
         
@@ -222,7 +222,7 @@ public class TileLayer {
     public void drawLayer(Graphics g) {
         
 
-        BufferedImage img2 = loadTileSheet("src/758e05cf2b472e1ba65c68b9c350a1ed.jpg");
+        BufferedImage img2 = loadTileSheet("src/images/758e05cf2b472e1ba65c68b9c350a1ed.jpg");
 
         g.drawImage(img2,0,0,640,480,null);
 
