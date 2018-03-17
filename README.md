@@ -27,3 +27,4 @@ Meeting logs : https://docs.google.com/document/d/1VbwPisUn_UkfPCoFvkpm6Gfb3ZaXw
 
 ANALYSIS REPORT: :white_check_mark:
 DESIGN REPORT: :white_check_mark:
+Link of the first demo: https://youtu.be/Ss2OlFF6jP4
