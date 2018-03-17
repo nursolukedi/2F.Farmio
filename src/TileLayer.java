@@ -1,6 +1,7 @@
-package src;
+package javaapplication1;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,43 +15,51 @@ import javax.imageio.ImageIO;
 
 public class TileLayer {
     
+    // instance variables
     
     
+    // int matrix to illustrate the map
     private int[][] map;
-
-
-    
-    private BufferedImage tileSheet;
     
     
+    // main tile image
+    private BufferedImage seed, redSeed, treeTop;
+    
+    
+    private static int ROW_NUMBER = 6;
+    private static int COL_NUMBER = 8;
+    
+    
+    // constructor
     public TileLayer(int[][] existingMap) {
         
+        
+        // fill the map according to the previously saved one
         
         
         map = new int[existingMap.length][existingMap[0].length];
         
         
-        
-        for (int y = 0; y < map.length; y++)
-            
+        for (int y = 0; y < map.length; y++) 
         {
-            
-            for (int x = 0; x < map[y].length; x++)
-                
+            for (int x = 0; x < map[y].length; x++)  
             {
                 
                 map[y][x] = existingMap[y][x];
                 
             }
-            
         }
         
         
-        tileSheet = loadTileSheet("a.png");
+        seed = loadTileSheet("seed80x80.png");
+        redSeed = loadTileSheet("redSeed80x80.png");
+        treeTop = loadTileSheet("treetop80x80.png");
         
-        
-    }
+    } // constructor
     
+    
+    
+    // default constructor
     public TileLayer (int width, int height) {
         
         map = new int[height][width];
@@ -58,76 +67,111 @@ public class TileLayer {
     }
     
     
+    
+    // reads the text file
     public static TileLayer readTextFile(String mapFileName) {
-        
-        
+          
         
         TileLayer layer = null;
         
         
         
-        int ROW_NUM = 6;
-        int COL_NUM = 8;
+        int[][] tempLayout = new int[ROW_NUMBER][COL_NUMBER];
         
         
         
-        int[][] tempLayout = new int[ROW_NUM][COL_NUM];
-        
-        
+        // try reading the text file
         
         try (BufferedReader reader = new BufferedReader(new FileReader(mapFileName))) {
             
-            String line;
             
-            int i = 0;
-            int j = 0;
+            String line; // a line (row) of the text file
             
-            while ((line = reader.readLine()) != null && i < ROW_NUM) {
+            
+            int i = 0; // index to access rows
+            int j = 0; // index to access columns
+            
+            
+            
+            // read a single line of the text file
+            
+            while (i < ROW_NUMBER && (line = reader.readLine()) != null) {
                 
-                if (line.isEmpty()) // skip (do not care) spaces
+                
+                
+                // make sure the column index is initialized back to 0
+                j = 0;
+                
+                
+                
+                
+                if (line.isEmpty()) // to skip empty spaces in the text file
                     continue;
                 
+                
+                // get the values (from a row of the text file)
+                // which are separated by empty spaces (" ")
                 
                 String[] readValues = line.trim().split(" ");
                 
                 
-                while (j < COL_NUM) { // for (String singleVal : readValues) {
+                
+                // for each value other than a space (" ")
+                
+                for (String singleVal : readValues) {
                     
-                    if (!readValues[j].isEmpty() && j < COL_NUM) { // if (!singleVal.isEmpty()) {
+                    
+                    if (!singleVal.isEmpty()) { // if the read token is not empty
                         
-                        int id = Integer.parseInt(readValues[j]);
+                        
+                        // convert that value to an integer
+                        
+                        int id = Integer.parseInt(singleVal);
+                        
+                        
+                        // assign the respective cell of the matrix to that value
+                        // i.e. fill the 2-D array
                         
                         tempLayout[i][j++] = id;
                         
+                        
+                        // for tracing purposes
                         System.out.print(id + " ");
                         
+                     
                     } // if
                 
-                }
+                    
+                } // a line from the text file is consumed, move the next line
                 
-                i++;
+                i++; // move to the next row
+                
+                // for tracing purposes
                 
                 System.out.println("");
                 
+                
             } // while
             
-        }
+        } // try block
+        
+        
         
         catch (IOException exc) {
             
-            
+            System.out.println("Could not read the text file!");
             
         }
         
-        int width = COL_NUM;
         
-        int height = ROW_NUM;
         
-        layer = new TileLayer(width, height);
+        layer = new TileLayer(COL_NUMBER, ROW_NUMBER);
         
-        for (int y = 0; y < height; y++) {
+        
+        
+        for (int y = 0; y < ROW_NUMBER; y++) {
             
-            for (int x = 0; x < width; x++) {
+            for (int x = 0; x < COL_NUMBER; x++) {
                 
                 layer.map[y][x] = tempLayout[y][x];
                 
@@ -135,21 +179,34 @@ public class TileLayer {
             
         }
         
-        layer.tileSheet = layer.loadTileSheet("a.png");
+        
+        
+        layer.seed = layer.loadTileSheet("seed80x80.png");
+        layer.redSeed = layer.loadTileSheet("redSeed80x80.png");
+        layer.treeTop = layer.loadTileSheet("treetop80x80.png");
+        
+        
         
         return layer;
         
-    }
+        
+    } // readTextFile()
+    
+    
     
     public BufferedImage loadTileSheet(String fileName) {
         
+        
         BufferedImage image = null;
+        
         
         try {
             
             image = ImageIO.read(new File(fileName));
             
         }
+        
+        
         catch(IOException exc) {
             
             System.out.println("Cannot load image!");
@@ -160,28 +217,51 @@ public class TileLayer {
         
     } // loadTileSheet
     
-    public void drawLayer(Graphics g) {
-
-
-
-      //  g.drawImage(img,0,0,640,480,null );
-
-        for (int row = 0; row < 300; row++) {
-            
-            for (int col = 0; col < 400; col++) {
-                
-                int rc = map[row][col];
-                
-                if (rc == 0) g.setColor(Color.GREEN);
-                else if (rc == 1) g.setColor(Color.BLUE);
-                
-               // g.drawImage(tileSheet, 0 + col * 50, 0 + row * 50, null);
-                
-                g.fillRect(0 + col * 50, 0 + row * 50, 20, 20);
-                
-            }
-        }
-        
-    }
     
-}
+    
+    public void drawLayer(Graphics g) {
+        
+        for (int row = 0; row < ROW_NUMBER; row++) {
+            
+            
+            for (int col = 0; col < COL_NUMBER; col++) {
+                
+                
+                
+                int rc = map[row][col]; // 
+                
+                
+                
+                if (rc == 0) 
+                
+                {
+                    g.drawImage(treeTop, col * 80, row * 80, null); 
+                }
+                
+                
+                
+                else if (rc == 1)
+                    
+                {
+                    g.drawImage(seed, col * 80, row * 80, null); 
+                }
+                
+                
+                
+                else if (rc == 2)
+                    
+                {
+                    g.drawImage(redSeed, col * 80, row * 80, null); 
+                }
+                
+                
+                
+            } // columns
+            
+        } // rows
+        
+        
+        
+    } // drawLayer()
+    
+} // TileLayer
