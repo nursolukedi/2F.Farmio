@@ -1,8 +1,10 @@
 package src.source.model;
-import java.awt.Image;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 public class Strawberry extends Food{
-	private Image image= new ImageIcon("src/images/strawberry.png").getImage();
+
+	private ImageIcon icon = new ImageIcon("src/images/strawberry.png");
 	
 	private final int healthPoints=100;
 	private final int storePrice=10;
@@ -25,8 +27,13 @@ public class Strawberry extends Food{
 		return storePrice;
 	}
 	
-	public Image getImage(){
-		return image;
+	public ImageIcon getImage(){
+		return icon;
 	}
+
+    public void draw(Graphics g)
+    {
+        g.drawImage(icon.getImage(),getX(),getY(),40,40,null);
+    }
 	
 }

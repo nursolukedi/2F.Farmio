@@ -8,11 +8,17 @@ public class GUIMain extends JFrame
 {
 
      private CardLayout cards;
+
      private JPanel contentPane;
 
      private Menu menu;
      private Credits credits;
      private GamePanel gameView;
+
+     private HowToPlay howToPlay;
+
+     private static int MENU_SIZE_WIDTH = 1000;
+     private static int MENU_SIZE_HEIGHT = 1000;
 
 
      private GUIMain()
@@ -20,7 +26,7 @@ public class GUIMain extends JFrame
 
          setTitle("Farmio");
 
-         setSize(640,480);
+         setSize(MENU_SIZE_WIDTH,MENU_SIZE_WIDTH);
 
          setResizable(false);
 
@@ -32,12 +38,13 @@ public class GUIMain extends JFrame
          contentPane.setLayout(cards);
 
 
-         menu = new Menu(contentPane,cards);
+         gameView = new GamePanel();
+
+         menu = new Menu(contentPane,cards,gameView);
 
          credits = new Credits(contentPane,cards);
 
-         gameView = new GamePanel();
-
+         howToPlay = new HowToPlay(contentPane,cards);
 
 
          contentPane.add(menu, "main");
@@ -45,6 +52,8 @@ public class GUIMain extends JFrame
          contentPane.add(credits, "credits");
 
          contentPane.add(gameView, "gameView");
+
+         contentPane.add(howToPlay,"howToPlay");
 
 
          cards.show(contentPane, "main");

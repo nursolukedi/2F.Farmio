@@ -1,8 +1,10 @@
 package src.source.model;
-import java.awt.Image;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
-public class Potato extends Food{
-	private Image image= new ImageIcon("src/image/tomato.png").getImage();
+public class Potato extends Food
+{
+	private ImageIcon imageIcon = new ImageIcon("src/images/potato.png");
 	
 	private final int healthPoints=1;
 	private final int storePrice=1;
@@ -12,7 +14,8 @@ public class Potato extends Food{
 		super(x, y);
 	}
 	
-	public int getHealthPoints(){
+	public int getHealthPoints()
+	{
 		return healthPoints;
 	}
 	
@@ -23,9 +26,15 @@ public class Potato extends Food{
 	public int getStoreSellingPrice(){
 		return storePrice;
 	}
-	
-	public Image getImage(){
-		return image;
+
+
+	public ImageIcon getImage(){
+		return imageIcon;
 	}
-	
+
+    public void draw(Graphics g)
+    {
+        g.drawImage(imageIcon.getImage(),getX(),getY(),40,40,null);
+    }
+
 }

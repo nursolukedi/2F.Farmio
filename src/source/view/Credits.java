@@ -7,16 +7,11 @@ import java.awt.event.ActionListener;
 
 public class Credits extends JPanel
 {
+    private ImageIcon background;
     public Credits(JPanel contentPanel, CardLayout cards)
     {
-
-        JTextPane textPane = new JTextPane();
-        textPane.setText( "Demir Topaktaş\n Fuad Ahmed\n Nursena Kal\n Eray Şahin" );
-
-        add(textPane);
-
+        background = new ImageIcon("src/images/credits.png");
         JButton returnButton = new JButton("Return To Menu");
-
         returnButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
@@ -24,10 +19,15 @@ public class Credits extends JPanel
                 cards.show(contentPanel,"main");
             }
         } );
-
         add(returnButton);
-
-
     }
+
+    @Override
+    public void paintComponent(Graphics g)
+    {
+        super.paintComponent(g);
+        g.drawImage(background.getImage(),0,0,null);
+    }
+
 
 }

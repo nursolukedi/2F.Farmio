@@ -1,20 +1,25 @@
 package src.source.model;
 import java.awt.Image;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-public abstract class GameObject {
-	private int x;
+public abstract class GameObject implements java.io.Serializable {
+
+    private int x;
 	private int y;
-	
-	private static int side=50; //planning to make an rectangle on every 
-	//object to detect collision with mouse 
-	private Rectangle rect;
-	
-	public GameObject(int x, int y){
+
+	public GameObject(){
+
+
+	}
+
+	public GameObject(int x, int y)
+	{
 		this.x=x;
 		this.y=y;
-		
-		rect = new Rectangle(x, y, side, side);
 	}
 	
 	public void setX(int x){
@@ -25,15 +30,15 @@ public abstract class GameObject {
 		this.y=y;
 	}
 	
-	public int getY(int y){
+	public int getY(){
 		return y;
 	}
-	
-	public int getX(int y){
+	public int getX(){
 		return x;
 	}
-	
-	
+
 	public abstract String getName();
-	public abstract Image getImage();
+
+    public abstract ImageIcon getImage();
+
 }
