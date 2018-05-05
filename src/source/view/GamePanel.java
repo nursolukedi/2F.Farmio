@@ -62,6 +62,8 @@ public class GamePanel extends JPanel
         add(mapPanel, BorderLayout.NORTH);
 
 
+        playerInfoPanel = new PlayerInfoPanel();
+
 
         //key binding for ESC action
         sideMenuAction = new SideMenuAction();
@@ -90,6 +92,11 @@ public class GamePanel extends JPanel
         return this;
     }
 
+    public PlayerInfoPanel getPlayerInfoPanel()
+    {
+        return playerInfoPanel;
+
+    }
 
     public void setFirstLoadGame()
     {
@@ -137,11 +144,7 @@ public class GamePanel extends JPanel
     public void startManagerGameLoop( boolean isLoaded )
     {
         gameManager.startGameLoop(isLoaded);
-
-        //add player panel to holder
-        playerInfoPanel = new PlayerInfoPanel(gameManager.getMapManager().getMap());
-        //playerInfoPanel.setPreferredSize(new Dimension(100,100 ) );
-
+        playerInfoPanel.setMap(gameManager.getMapManager().getMap());
         add(playerInfoPanel,BorderLayout.SOUTH);
     }
 

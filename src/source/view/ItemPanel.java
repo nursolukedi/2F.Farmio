@@ -1,10 +1,9 @@
 package src.source.view;
 
 import src.source.model.*;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+
+import javax.swing.*;
+import java.awt.*;
 
 
 /**
@@ -209,10 +208,30 @@ public class ItemPanel extends JPanel {
         totalCost = new JLabel();
 
 
+         if (!name.equals("GMC"))
+         {
 
-        // icon.setIcon(new ImageIcon(getClass().getResource("/images/"
-        //           + name + ".png"))); // NOI18N
+             Image newImageIcon = new ImageIcon("src/images/"
+                     + name.toLowerCase() + ".png").getImage();
 
+
+             Image newImage = newImageIcon.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+
+             ImageIcon imageIcon = new ImageIcon(newImage);  // transform it back
+
+             icon.setIcon( imageIcon );
+         }
+         else
+         {
+             Image newImageIcon = new ImageIcon("src/images/"
+                     + name + ".png").getImage();
+
+             Image newImage = newImageIcon.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+
+             ImageIcon imageIcon = new ImageIcon(newImage);  // transform it back
+
+             icon.setIcon( imageIcon );
+         }
 
 
         // set the name label
@@ -281,7 +300,7 @@ public class ItemPanel extends JPanel {
                 actualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(actualPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(icon, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(icon, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(8, 8, 8)
                                 .addGroup(actualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)

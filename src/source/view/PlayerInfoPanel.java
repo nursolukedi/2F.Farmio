@@ -12,16 +12,17 @@ public class PlayerInfoPanel extends JPanel
 
     private ImageIcon icon;
 
-    public PlayerInfoPanel(Map map)
+    public PlayerInfoPanel()
     {
-        this.map=map;
         setLayout(new FlowLayout());
-        health = new JLabel("HEALTH: "+100, JLabel.LEFT);
-        money = new JLabel("MONEY: "+100, JLabel.CENTER);
-        add(health);
-        add(money);//adding labels to panel
 
-       icon = new ImageIcon("src/images/playerBackground.jpg");
+        health = new JLabel();
+        money = new JLabel();
+
+        add(health,FlowLayout.LEFT);
+        add(money, FlowLayout.CENTER);//adding labels to panel
+
+        icon = new ImageIcon("src/images/playerBackground.jpg");
 
     }
 
@@ -36,16 +37,20 @@ public class PlayerInfoPanel extends JPanel
         }
         health.setText("HEALTH: "+map.getFarmer().getFarmerHealth());
         money.setText("MONEY: "+map.getFarmer().getFarmerMoney());//updating health and money
-        repaint();
-        updateUI();
     }
+
+
+    public void setMap(Map map)
+    {
+        this.map = map;
+        health.setText("HEALTH: "+map.getFarmer().getFarmerHealth());
+        money.setText("MONEY: "+map.getFarmer().getFarmerMoney());
+    }
+
 
     @Override
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-
-      //  g.drawImage(icon.getImage(),0,0,1000,15,null);
-
     }
 }

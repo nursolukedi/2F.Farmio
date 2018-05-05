@@ -87,7 +87,6 @@ public class MapManager
     {
         gameStatus = GameStatus.RETURN_MENU;
         map.stopAllSeeds();
-
         map.stopAllTrees();
     }
 

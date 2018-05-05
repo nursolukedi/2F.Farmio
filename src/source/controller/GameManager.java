@@ -52,6 +52,7 @@ public class GameManager
 
         //sets map manager for map panel
         gameView.getMapPanel().setMapManager(mapManager);
+
     }
 
     //singleton design pattern
@@ -92,8 +93,6 @@ public class GameManager
         mapManager.exit();
     }
 
-
-
     //main game loop for updating the game and repainting game
     private void gameLoop()
     {
@@ -123,8 +122,12 @@ public class GameManager
       {
          timer.stop();
          gameRunning = false;
-          JOptionPane.showMessageDialog(gameView,
+         int result = JOptionPane.showConfirmDialog(gameView,
                   "Game is over");
+         if (result  == JOptionPane.YES_OPTION)
+         {
+              gameView.returnMenu();
+         }
       }
       else if(mapManager.getGameStatus() == GameStatus.RETURN_MENU)
       {
