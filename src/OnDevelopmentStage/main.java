@@ -21,7 +21,7 @@ public class main {
         
         JFrame frame = new JFrame("window");
         
-        DrawPanel panel = new DrawPanel();
+      //  DrawPanel panel = new DrawPanel();
         
         frame.setSize(new Dimension(800, 600));
         

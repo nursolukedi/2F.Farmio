@@ -1,18 +1,23 @@
 package src.source.model;
-import java.awt.Image;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 public class Sunflower extends Food{
-	private Image image= new ImageIcon("src/images/sunflower.png").getImage();
+
+
+	private ImageIcon icon  = new ImageIcon("src/images/sunflower.png");
 	
 	private final int healthPoints=25;
 	private final int storePrice=5;
 	private final String name="sunflower";
 	
-	public Sunflower(int x, int y){
+	public Sunflower(int x, int y)
+	{
 		super(x, y);
 	}
 	
-	public int getHealthPoints(){
+	public int getHealthPoints()
+	{
 		return healthPoints;
 	}
 	
@@ -20,12 +25,19 @@ public class Sunflower extends Food{
 		return name;
 	}
 	
-	public int getStoreSellingPrice(){
+	public int getStoreSellingPrice()
+	{
 		return storePrice;
 	}
 	
-	public Image getImage(){
-		return image;
+	public ImageIcon getImage()
+	{
+		return icon;
+	}
+
+	public void draw(Graphics g)
+	{
+		g.drawImage(icon.getImage(),getX(),getY(),40,40,null);
 	}
 	
 }
