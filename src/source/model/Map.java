@@ -536,6 +536,10 @@ public class Map implements java.io.Serializable
                 {
                     ( (RaspberryTree) object ).draw(g);
                 }
+                else if(object instanceof  Corn )
+                {
+                    ((Corn) object).draw(g);
+                }
 
             }
         }

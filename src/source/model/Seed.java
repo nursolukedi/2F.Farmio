@@ -111,11 +111,11 @@ public class Seed extends Item
             public void actionPerformed(ActionEvent e)
             {
                 timeHolder = timeHolder + 1;
-                System.out.println("Hello I am seed");
+             //   System.out.println("Hello I am seed");
                 if ( hasWater && !isDeveloped )
                 {
                     checkSeedTime();
-                    System.out.println("I am planted ");
+                 //   System.out.println("I am planted ");
                     if (status == 1)
                     {
                         isDeveloped = true;
@@ -136,7 +136,7 @@ public class Seed extends Item
 
     public void stopTimer()
     {
-        System.out.println("stop!!!!");
+     //   System.out.println("stop!!!!");
         seedTimer.stop();
     }
 
@@ -151,7 +151,7 @@ public class Seed extends Item
          if( (timeHolder % growthTime ) == 0  )
          {
              grow();
-             System.out.println("I am growing");
+          //   System.out.println("I am growing");
              consumeWater();
          }
     }

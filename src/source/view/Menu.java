@@ -48,11 +48,20 @@ public class Menu extends JPanel
            @Override
            public void actionPerformed(ActionEvent e)
            {
-
                gameView.openSavedFilesFrame();
-            //   gameView.setMap();
            }
 
+       });
+
+       //how to play button
+       JButton howToPlayButton = new JButton("How To Play");
+       howToPlayButton.addActionListener(new ActionListener()
+       {
+           @Override
+           public void actionPerformed(ActionEvent e)
+           {
+               cards.show(contentPanel,"howToPlay");
+           }
        });
 
 
@@ -69,10 +78,12 @@ public class Menu extends JPanel
        startGameButton.setAlignmentX(CENTER_ALIGNMENT);
        loadGameButton.setAlignmentX(CENTER_ALIGNMENT);
        creditsButton.setAlignmentX(CENTER_ALIGNMENT);
+       howToPlayButton.setAlignmentX(CENTER_ALIGNMENT);
 
 
        add(startGameButton);
        add(loadGameButton);
+       add(howToPlayButton);
        add(creditsButton);
 
     }

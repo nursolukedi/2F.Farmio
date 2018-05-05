@@ -42,7 +42,7 @@ public class FileManager
                 String go = lineScanner.next();
 
                 row[index] = Integer.parseInt(go);
-                System.out.println("=====" + index+"---"+go);
+           //     System.out.println("=====" + index+"---"+go);
                 index++;
             }
             readMap[indexLine]=row;

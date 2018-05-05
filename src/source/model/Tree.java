@@ -102,7 +102,7 @@ public abstract class Tree extends Item {
 
 
         if(stateCnt==0 && isWatered==false) {
-            System.out.println("HELLO HES 000000000000000");
+          //  System.out.println("HELLO HES 000000000000000");
             stateCnt=0;
             updateView();
         }

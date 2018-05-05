@@ -15,9 +15,9 @@ public class GUIMain extends JFrame
      private Credits credits;
      private GamePanel gameView;
 
+     private HowToPlay howToPlay;
 
      private static int MENU_SIZE_WIDTH = 1000;
-
      private static int MENU_SIZE_HEIGHT = 1000;
 
 
@@ -44,6 +44,7 @@ public class GUIMain extends JFrame
 
          credits = new Credits(contentPane,cards);
 
+         howToPlay = new HowToPlay(contentPane,cards);
 
 
          contentPane.add(menu, "main");
@@ -51,6 +52,8 @@ public class GUIMain extends JFrame
          contentPane.add(credits, "credits");
 
          contentPane.add(gameView, "gameView");
+
+         contentPane.add(howToPlay,"howToPlay");
 
 
          cards.show(contentPane, "main");

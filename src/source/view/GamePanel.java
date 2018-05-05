@@ -1,19 +1,10 @@
 package src.source.view;
 
-import javafx.geometry.HorizontalDirection;
 import src.source.controller.GameManager;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 
 //GamePanel is façade class for view objects
@@ -80,7 +71,7 @@ public class GamePanel extends JPanel
 
         //key binding for I action
         inventoryAction = new InventoryAction();
-        getInputMap().put( KeyStroke.getKeyStroke( KeyEvent.VK_SPACE, 0),"doINVAction" );
+        getInputMap().put( KeyStroke.getKeyStroke( KeyEvent.VK_I, 0),"doINVAction" );
         getActionMap().put("doINVAction",inventoryAction);
 
 
@@ -170,10 +161,7 @@ public class GamePanel extends JPanel
     {
         public void actionPerformed(ActionEvent e)
         {
-            System.out.println("Heyy");
-
             JOptionPane.showMessageDialog(null,sideMenu,"SideMenu",JOptionPane.PLAIN_MESSAGE);
-
             sideMenu.requestFocusInWindow();
         }
     }
@@ -184,9 +172,7 @@ public class GamePanel extends JPanel
     {
         public void actionPerformed(ActionEvent e)
         {
-            System.out.println("LLALALALALALA");
             inventoryFrame=new InventoryFrame(gameManager.getMapManager());
-            System.out.println("LLALALALALALA");
             inventoryFrame.setInventoryItems(gameManager.getMapManager().getMap());
         }
     }

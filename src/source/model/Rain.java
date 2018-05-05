@@ -38,7 +38,7 @@ public class Rain implements java.io.Serializable
         int random = rain.nextInt(30);
 
         probablity+=random;
-        System.out.println("RANDOM   "+ random +"  PROBABLITY" + probablity + "^^^^^^^^^^");
+     //   System.out.println("RANDOM   "+ random +"  PROBABLITY" + probablity + "^^^^^^^^^^");
         if(probablity>21){
             for(int c=0; c<trees.size(); c++)
                 trees.get(c).water();
